@@ -1,0 +1,1 @@
+print("Testul 1")
