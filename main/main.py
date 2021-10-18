@@ -107,12 +107,25 @@ def test_lista_dupa_adaugarea_nr_de_divizori():
     assert lista_dupa_adaugarea_nr_de_divizori([1, 2, 3, 5]) == [1, 0, 2, 0, 3, 0, 5, 0]
     assert lista_dupa_adaugarea_nr_de_divizori([4, 9]) == [4, 1, 9, 1]
 def numar_aparente(x,l):
+    '''
+
+    :param x: numarul prelucrat
+    :param l: lista data
+    :return: numarul de aparitii a lui x in l
+    '''
     numar=0
     for i in l:
         if i == x:
             numar=numar+1
     return numar
 def triplet(x,i,l):
+    '''
+
+    :param x: numar dat
+    :param i: indexului lui x
+    :param l: lista data
+    :return: tripletul elementului x
+    '''
     lista=[]
     lista.append((x))
     lista.append((i))
@@ -121,15 +134,26 @@ def triplet(x,i,l):
 
 
 def liste_tripleti(l):
+    '''
+
+    :param l: lista prelucrata
+    :return: lista noua in care fiecare element a fost inlocuit cu un triplet
+    '''
     lista_tripleti=[]
     for i in range(len(l)):
 
         lista_tripleti.append((triplet(l[i],i,l)))
     return lista_tripleti
+
+
 def test_liste_tripleti():
+    '''
+    Verifica eficienta functiei liste_tripleti()
+    '''
     assert liste_tripleti([25, 13, 26, 13])== [[25, 0, 1], [13, 1, 2], [26, 2, 1], [13, 3, 2]]
     assert liste_tripleti([1,2,3,4,5,1]) == [[1, 0, 2], [2, 1, 1], [3, 2, 1], [4, 3, 1], [5, 4, 1], [1, 5, 2]]
     assert liste_tripleti([12,13,14,15,12,13,14]) == [[12, 0, 2], [13, 1, 2], [14, 2, 2], [15, 3, 1], [12, 4, 2], [13, 5, 2], [14, 6, 2]]
+
 def main():
     l = []
     test_numere_prime_din_lista()
